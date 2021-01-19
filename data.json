@@ -1,0 +1,27 @@
+{
+  "amazon": {
+    "sent": false,
+    "timestamp": null,
+    "silenced": false
+  },
+  "bestbuy": {
+    "sent": false,
+    "timestamp": null,
+    "silenced": false
+  },
+  "target": {
+    "sent": false,
+    "timestamp": null,
+    "silenced": false
+  },
+  "walmart": {
+    "sent": false,
+    "timestamp": null,
+    "silenced": false
+  },
+  "gamestop": {
+    "sent": false,
+    "timestamp": null,
+    "silenced": false
+  }
+}

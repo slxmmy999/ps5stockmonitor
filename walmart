@@ -1,0 +1,27 @@
+try:
+        driver.get('https://www.walmart.com/ip/PlayStation5-Console/363472942')
+    except TimeoutException:
+        driver.execute_script('window.stop()')
+    title = 'Playsation 5: Walmart'
+    tabname = driver.title
+    if tabname == 'Error Page':
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print(f'{current_time} [{title}]:' + colored.red(' OUT OF STOCK'))
+    else:
+        try:
+            driver.find_element_by_xpath('/html/body/div[1]/div[3]/div')
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            print(f'{current_time} [{title}]:' + colored.red(' OUT OF STOCK'))
+        except NoSuchElementException:
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            print(f'{current_time} [{title}]:' + colored.green(' IN STOCK'))
+            message = {
+                "content": "<@592001125511725075> <@738177536873201696> [WALMART]: IN STOCK [URL]: https://www.walmart.com/ip/PlayStation5-Console/363472942"
+            }
+            requests.post(webhookurl, data=message)
+    driver.execute_script('window.open()')
+    driver.close()
+    driver.switch_to_window(driver.window_handles[0])
