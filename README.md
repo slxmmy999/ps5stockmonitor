@@ -6,3 +6,4 @@ These stores include:
 - Walmart
 - GameStop
 - BestBuy
+- Amazon.com
